@@ -76,6 +76,10 @@ Browser.defaultResolverSequence = [
 
 ## PHP API "Slim API"
 
+Find PHP-Server.zip file and unpack it on your web server, example: https://your-domain.com/api3/
+Make sure files are accessible from the web, like:
+http://your-domain.com/api3/public/index_forward.php?device=0&userdata=Hello-Google-Home
+
 Make sure you ceate MySQL database and modify db.php files located in 
 ```sh
 api3/src/config/db.php
