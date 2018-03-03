@@ -73,3 +73,27 @@ Browser.defaultResolverSequence = [
 , rst.makeAddressesUnique()
 ];
 ```
+
+## PHP API "Slim API"
+
+Make sure you ceate MySQL database and modify db.php files located in 
+```sh
+api3/src/config/db.php
+api3/public/index_forward.php
+```
+Created MySQL database and one empty table like:
+```javascript
+database name:  storedns
+table name: storedDNS
+columns: 
+tb_id   Auto increment  size 10, 
+storedDNS   Text size  255
+
+```
+And change to:
+```javascript
+Browser.defaultResolverSequence = [
+  rst.DNSServiceResolve(), 'DNSServiceGetAddrInfo' in dns_sd ? rst.DNSServiceGetAddrInfo() : rst.getaddrinfo({families:[4]})
+, rst.makeAddressesUnique()
+];
+```
