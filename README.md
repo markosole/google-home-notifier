@@ -1,3 +1,12 @@
+# google-home-notifier with DNS PHP API v2
+Original project forked from https://github.com/noelportugal/google-home-notifier and modified with API added.
+When you install and run local NodeJS, it connects to ngrock.io Service.
+Every time it's connected, RANDOM-NUMBER is generated and ( URL https://RANDOM-NUMBER.ngrok.io/google-home-notifier ) on ngrock server side. We can not know what number we get every single time. 
+For that reason, I'v created PHP API and MySQL database to store those data (final URL) ex. 4a27ae68.ngrok.io
+Every time app connects, it push new updates to MySQL and then we can use cURL and POST methods from our subdomain ex. https://push.my-website.com/api3/public/index_forward.php?device=1&userdata=How-are-you?
+
+REMEMBER: Messages are sent and formated with "-" in place of space. ex. userdata=How-are-you?
+
 # google-home-notifier
 Send notifications to Google Home
 
